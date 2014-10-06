@@ -33,6 +33,8 @@ text-align: center;
 	}	
 	#the_footer{
 		border-top: 1px solid blue;
+		display: -webkit-box;
+		     -webkit-box-pack:center;
 		}
 		#canvas{
 			border:3px solid black;
