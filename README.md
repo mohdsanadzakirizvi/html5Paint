@@ -1,4 +1,6 @@
 A paint app that's simple and powerful designed to run as part of a browser hence platform independent .
+try it here :
+http://mohdsanadzakirizvi.github.io/html5Paint
 
 Note:
 a.The Eraser tab needs some debugging after using it you can't use other buttons ,you need to refresh the page.
