@@ -30,14 +30,14 @@ function erase(e)
 var xPos=e.clientX;
 var yPos=e.clientY;
 
-context.clearRect(xPos-270,yPos-200,w,h);
+context.clearRect(xPos-200,yPos-165,w,h);
 
 	
 	window.addEventListener("mousemove",erase,false);
 
 	}
 function allclean()
-{context.clearRect(0,0,800,800);
+{context.clearRect(0,0,990,990);
 }
 
 function thick()
@@ -70,7 +70,7 @@ else if(count ==3)
 context.fillStyle="orange";
 else if(count >3)
 count=0;
-context.fillRect(xPos-270,yPos-200,w,h);
+context.fillRect(xPos-200,yPos-165,w,h);
 	
 
 }
