@@ -1,0 +1,40 @@
+*{
+margin: 0px;
+padding: 0px;
+	}
+	header,section,footer,nav{
+		display:block;}
+#top_menu li
+{display: inline-block;
+padding:30px;
+margin-left:  20px;
+margin-right: 20px;
+-webkit-border-radius: 25px;
+-webkit-box-shadow:rgb(66,66,66) 8px 8px 8px;
+font:bold 20px Times;
+border:solid 2px red;
+background-color: yellow;
+	}	
+		body
+	{width:1400px;
+	height: 1000px;
+display: -webkit-box;
+-webkit-box-pack:center;
+background: #FFFF99;
+		}
+		#t1{
+			font:Comic-Sans;}
+		#main_section{
+border:1px solid blue;
+-webkit-box-flex:1; 	
+margin:20px;
+padding:20px;
+text-align: center;
+	}	
+	#the_footer{
+		border-top: 1px solid blue;
+		}
+		#canvas{
+			border:3px solid black;
+			background:white
+			}
