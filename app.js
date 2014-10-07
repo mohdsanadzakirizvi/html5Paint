@@ -30,7 +30,7 @@ function erase(e)
 var xPos=e.clientX;
 var yPos=e.clientY;
 
-context.clearRect(xPos-200,yPos-165,w,h);
+context.clearRect(xPos-167,yPos-167,w,h);
 
 	
 	window.addEventListener("mousemove",erase,false);
