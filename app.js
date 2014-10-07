@@ -70,7 +70,7 @@ else if(count ==3)
 context.fillStyle="orange";
 else if(count >3)
 count=0;
-context.fillRect(xPos-190,yPos-167,w,h);
+context.fillRect(xPos-169,yPos-167,w,h);
 	
 
 }
