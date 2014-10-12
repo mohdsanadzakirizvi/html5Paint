@@ -2,6 +2,8 @@ var count=0;
 var w=10;
 var h=10;
 var ecount=0;
+var textX=40,textY=40;
+ var flag=0;
 function doFirst()
 {
 	var canvas=document.getElementById('canvas');
@@ -21,6 +23,20 @@ function doFirst()
 	er=document.getElementById('eraser');
 	er.addEventListener("mouseover",erase,false);
 	
+    sm=document.getElementById('help');
+	sm.addEventListener("mouseover",help,false);
+	
+}
+function help()
+{   
+	
+	allclean();
+	var img=new Image();
+	img.onload=function(){context.drawImage(img,0,0);};
+	img.src="imp.png";
+	help.onload=allclean();
+
+	
 
 }
 
@@ -30,7 +46,7 @@ function erase(e)
 var xPos=e.clientX;
 var yPos=e.clientY;
 
-context.clearRect(xPos-167,yPos-167,w,h);
+context.clearRect(xPos-200,yPos-165,w,h);
 
 	
 	window.addEventListener("mousemove",erase,false);
@@ -70,7 +86,7 @@ else if(count ==3)
 context.fillStyle="orange";
 else if(count >3)
 count=0;
-context.fillRect(xPos-167,yPos-167,w,h);
+context.fillRect(xPos-200,yPos-165,w,h);
 	
 
 }
