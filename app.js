@@ -48,7 +48,7 @@ var yPos=e.clientY;
 context.clearRect(xPos-200,yPos-165,w,h);
 
 	
-	window.addEventListener("mousemove",erase,false);
+//	window.addEventListener("mousemove",erase,false);
 
 	}
 function allclean()
