@@ -52,7 +52,7 @@ context.clearRect(xPos-200,yPos-165,w,h);
 
 	}
 function allclean()
-{context.clearRect(0,0,990,990);
+{context.clearRect(0,0,1000,990);
 }
 
 function thick()
