@@ -2,6 +2,8 @@ var count=0;
 var w=10;
 var h=10;
 var ecount=0;
+var textX=40,textY=40;
+ var flag=0;
 function doFirst()
 {
 	var canvas=document.getElementById('canvas');
@@ -20,6 +22,19 @@ function doFirst()
 	
 	er=document.getElementById('eraser');
 	er.addEventListener("mouseover",erase,false);
+	
+    sm=document.getElementById('help');
+	sm.addEventListener("mouseover",help,false);
+	
+}
+function help()
+{   
+	
+	allclean();
+	var img=new Image();
+	img.onload=function(){context.drawImage(img,0,0);};
+	img.src="https://cloud.githubusercontent.com/assets/8193234/4626506/db791832-5381-11e4-8e2b-8eb0f18a3d5c.png";
+
 	
 
 }
