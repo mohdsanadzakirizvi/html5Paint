@@ -8,7 +8,10 @@ function doFirst()
 {
 	var canvas=document.getElementById('canvas');
 	context=canvas.getContext('2d');
-	window.addEventListener("mousemove",next,false);
+	
+	
+	pe=document.getElementById("color");
+	pe.addEventListener("mouseover",next,false);
 	
 
 	cs=document.getElementById("clear_all");
@@ -33,7 +36,7 @@ function help()
 	allclean();
 	var img=new Image();
 	img.onload=function(){context.drawImage(img,0,0);};
-	img.src="https://cloud.githubusercontent.com/assets/8193234/4626506/db791832-5381-11e4-8e2b-8eb0f18a3d5c.png";
+	img.src="https://cloud.githubusercontent.com/assets/8193234/4748832/31a6f694-5a7a-11e4-9706-5eed27c1a796.png";
 
 	
 
@@ -41,18 +44,14 @@ function help()
 
 function erase(e)
 {
+window.addEventListener("mousemove",function(e){var xPos=e.clientX;
+	var yPos=e.clientY;
+context.clearRect(xPos-200,yPos-169,w,h);},false);
 
-var xPos=e.clientX;
-var yPos=e.clientY;
-
-context.clearRect(xPos-200,yPos-165,w,h);
-
-	
-	window.addEventListener("mousemove",erase,false);
 
 	}
 function allclean()
-{context.clearRect(0,0,990,990);
+{context.clearRect(0,0,1000,990);
 }
 
 function thick()
@@ -72,7 +71,7 @@ count++;
 function next(e)
 {
 
-var xPos=e.clientX;
+window.addEventListener("mousemove",function(e){var xPos=e.clientX;
 var yPos=e.clientY;
 
 if(count==0)
@@ -85,7 +84,7 @@ else if(count ==3)
 context.fillStyle="orange";
 else if(count >3)
 count=0;
-context.fillRect(xPos-200,yPos-165,w,h);
+context.fillRect(xPos-200,yPos-169,w,h);},false);
 	
 
 }
