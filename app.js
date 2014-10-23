@@ -8,7 +8,10 @@ function doFirst()
 {
 	var canvas=document.getElementById('canvas');
 	context=canvas.getContext('2d');
-	window.addEventListener("mousemove",next,false);
+	
+	
+	pe=document.getElementById("color");
+	pe.addEventListener("mouseover",next,false);
 	
 
 	cs=document.getElementById("clear_all");
@@ -41,14 +44,10 @@ function help()
 
 function erase(e)
 {
+window.addEventListener("mousemove",function(e){var xPos=e.clientX;
+	var yPos=e.clientY;
+context.clearRect(xPos-165,yPos-165,w,h);},false);
 
-var xPos=e.clientX;
-var yPos=e.clientY;
-
-context.clearRect(xPos-200,yPos-165,w,h);
-
-	
-	window.addEventListener("mousemove",erase,false);
 
 	}
 function allclean()
@@ -72,7 +71,7 @@ count++;
 function next(e)
 {
 
-var xPos=e.clientX;
+window.addEventListener("mousemove",function(e){var xPos=e.clientX;
 var yPos=e.clientY;
 
 if(count==0)
@@ -85,7 +84,7 @@ else if(count ==3)
 context.fillStyle="orange";
 else if(count >3)
 count=0;
-context.fillRect(xPos-200,yPos-165,w,h);
+context.fillRect(xPos-165,yPos-165,w,h);},false);
 	
 
 }
