@@ -36,7 +36,7 @@ function help()
 	allclean();
 	var img=new Image();
 	img.onload=function(){context.drawImage(img,0,0);};
-	img.src="https://cloud.githubusercontent.com/assets/8193234/4626506/db791832-5381-11e4-8e2b-8eb0f18a3d5c.png";
+	img.src="https://cloud.githubusercontent.com/assets/8193234/4748832/31a6f694-5a7a-11e4-9706-5eed27c1a796.png";
 
 	
 
