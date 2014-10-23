@@ -46,7 +46,7 @@ function erase(e)
 {
 window.addEventListener("mousemove",function(e){var xPos=e.clientX;
 	var yPos=e.clientY;
-context.clearRect(xPos-165,yPos-165,w,h);},false);
+context.clearRect(xPos-200,yPos-169,w,h);},false);
 
 
 	}
