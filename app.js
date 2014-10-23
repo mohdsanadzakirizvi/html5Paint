@@ -84,7 +84,7 @@ else if(count ==3)
 context.fillStyle="orange";
 else if(count >3)
 count=0;
-context.fillRect(xPos-165,yPos-165,w,h);},false);
+context.fillRect(xPos-155,yPos-165,w,h);},false);
 	
 
 }
