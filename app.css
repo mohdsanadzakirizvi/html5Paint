@@ -25,10 +25,14 @@ background-color: yellow;
 	height: 1000px;
 display: -moz-box;
 display: -o-box;
+display: box;
 display: -webkit-box;
+
+box-pack:center;
 -webkit-box-pack:center;
 -moz-box-pack:center;
 -o-box-pack:center;
+
 background: #FFFF99;
 		}
 		#t1{
@@ -45,9 +49,12 @@ text-align: center;
 		display: -webkit-box;
 		display: -moz-box;
 		display: -o-box;
+		display: box;	
+		
 		     -webkit-box-pack:center;
 		 -moz-box-pack:center;
 		 -o-box-pack:center;
+		 	display: box;
 		}
 		#canvas{
 			border:3px solid black;
