@@ -24,9 +24,11 @@ background-color: yellow;
 	{width:1400px;
 	height: 1000px;
 display: -moz-box;
+display: -o-box;
 display: -webkit-box;
 -webkit-box-pack:center;
 -moz-box-pack:center;
+-o-box-pack:center;
 background: #FFFF99;
 		}
 		#t1{
@@ -42,8 +44,10 @@ text-align: center;
 		border-top: 1px solid blue;
 		display: -webkit-box;
 		display: -moz-box;
+		display: -o-box;
 		     -webkit-box-pack:center;
 		 -moz-box-pack:center;
+		 -o-box-pack:center;
 		}
 		#canvas{
 			border:3px solid black;
