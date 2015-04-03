@@ -16,7 +16,7 @@ e.Moving your mouse too fast doesn't give a continous line.
 NOTE: After seeing the instructions ,use Clear Screen to clear page 
 and start drawing! :)
 
-LICENSE: This project is licensed under terms of MIT license.
+LICENSE: This project is licensed under terms of MIT(http://opensource.org/licenses/MIT) license.
 
 
 
