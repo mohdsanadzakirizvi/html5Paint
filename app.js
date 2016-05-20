@@ -1,54 +1,49 @@
-var count = 0;
-var w = 10;
-var h = 10;
-var ecount = 0;
-var textX = 40,
-    textY = 40;
-var flag = 0;
+var count = 0,
+    w = 10,
+    h = 10,
+    ecount = 0,
+    textX = 40,
+    textY = 40,
+    flag = 0;
 
 function doFirst() {
-    var canvas = document.getElementById('canvas');
-    context = canvas.getContext('2d');
+    var pe = document.getElementById('color'),
+	    cs = document.getElementById('clear_all'),
+	    cl = document.getElementById('color'),
+	    th = document.getElementById('thick'),
+	    er = document.getElementById('eraser'),
+	    sm = document.getElementById('help'),
+	    dw = document.getElementById('download');
 
-
-    pe = document.getElementById("color");
-    pe.addEventListener("mouseover", next, false);
-
-
-    cs = document.getElementById("clear_all");
-    cs.addEventListener("mouseover", allclean, false);
-
-    cl = document.getElementById('color');
-    cl.addEventListener("mouseover", change_color, false);
-
-    th = document.getElementById('thick');
-    th.addEventListener("mouseover", thick, false);
-
-    er = document.getElementById('eraser');
-    er.addEventListener("mouseover", erase, false);
-
-    sm = document.getElementById('help');
-    sm.addEventListener("mouseover", help, false);
-
+    pe.addEventListener('mouseover', next, false);
+    cs.addEventListener('mouseover', allclean, false);
+    cl.addEventListener('mouseover', change_color, false);
+    th.addEventListener('mouseover', thick, false);
+    er.addEventListener('mouseover', erase, false);
+    sm.addEventListener('mouseover', help, false);
+    dw.addEventListener('mouseover',download,false);
 }
 
 function help() {
-
+	var canvas = document.getElementById('canvas'),
+	    context = canvas.getContext('2d');
     allclean();
     var img = new Image();
     img.onload = function() {
         context.drawImage(img, 0, 0);
     };
-    img.src = "help.png";
+    img.src = 'help.png';
 
 
 
 }
 
 function erase(e) {
-    window.addEventListener("mousemove", function(e) {
-        var xPos = e.clientX;
-        var yPos = e.clientY;
+	var canvas = document.getElementById('canvas'),
+	    context = canvas.getContext('2d');	
+    window.addEventListener('mousemove', function(e) {
+        var xPos = e.clientX,
+            yPos = e.clientY;
         context.clearRect(xPos - 200, yPos - 169, w, h);
     }, false);
 
@@ -56,6 +51,8 @@ function erase(e) {
 }
 
 function allclean() {
+	var canvas = document.getElementById('canvas'),
+	    context = canvas.getContext('2d');
     context.clearRect(0, 0, 1000, 990);
 }
 
@@ -77,18 +74,21 @@ function change_color() {
 
 function next(e) {
 
-    window.addEventListener("mousemove", function(e) {
+	var canvas = document.getElementById('canvas'),
+	    context = canvas.getContext('2d');
+
+    window.addEventListener('mousemove', function(e) {
         var xPos = e.clientX;
         var yPos = e.clientY;
 
         if (count == 0)
-            context.fillStyle = "blue";
+            context.fillStyle = 'blue';
         else if (count == 1)
-            context.fillStyle = "yellow";
+            context.fillStyle = 'yellow';
         else if (count == 2)
-            context.fillStyle = "red";
+            context.fillStyle = 'red';
         else if (count == 3)
-            context.fillStyle = "orange";
+            context.fillStyle = 'orange';
         else if (count > 3)
             count = 0;
         context.fillRect(xPos - 200, yPos - 169, w, h);
@@ -97,4 +97,28 @@ function next(e) {
 
 }
 
-window.addEventListener("load", doFirst, false);
+function download(){
+	var canvas = document.getElementById('canvas'),
+        context = canvas.getContext('2d'), 
+	    a = document.getElementById('dw_link'),
+        data = context.getImageData(0, 0, 1000, 800),
+        compositeOperation = context.globalCompositeOperation;
+    
+    //set the canvas background to white
+    context.globalCompositeOperation = 'destination-over';
+    context.fillStyle = 'white';
+    context.fillRect(0,0,1000,800);
+    
+    //extract image 
+
+    var src = canvas.toDataURL('image/png');
+    a.setAttribute('href',src);
+    
+    //clear the canvas background
+    context.clearRect (0,0,1000,800);
+    context.putImageData(data, 0,0);        
+    context.globalCompositeOperation = compositeOperation;
+
+}
+
+window.addEventListener('load', doFirst, false);
